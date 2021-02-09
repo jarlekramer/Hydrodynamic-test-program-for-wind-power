@@ -1,0 +1,27 @@
+FoamFile
+{
+	version    2.0;
+	format    ascii;
+	class    dictionary;
+	location    "constant";
+	object    fvOptions;
+}
+
+propeller
+{
+	type      goldsteinActuationDiskSource;
+	active    on;
+
+	goldsteinActuationDiskSourceCoeffs
+	{
+		selectionMode cellSet;
+		cellSet actuatorDisk;
+		fieldNames (U);
+		Thrust 1.4322716146027505;
+		Torque 0.31722804562042484;
+		p1 (13.624950 -1.432040 -0.925000);
+		p2 (13.755481 -1.445759 -0.925000);
+		Rp 0.525;
+		Rh 0.10500000000000001;
+	}
+}

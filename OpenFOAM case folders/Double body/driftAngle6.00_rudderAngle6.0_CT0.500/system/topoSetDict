@@ -1,0 +1,24 @@
+FoamFile
+{
+	version    2.0;
+	format    ascii;
+	class    dictionary;
+	object    topoSetDict;
+}
+
+actions
+(
+	{
+		name actuatorDisk;
+		type cellSet;
+		action new;
+		source cylinderToCell;
+		sourceInfo
+		{
+			p1 (13.624950 -1.432040 -0.925000);
+			p2 (13.755481 -1.445759 -0.925000);
+			radius 0.525000;
+		}
+	}
+
+);
