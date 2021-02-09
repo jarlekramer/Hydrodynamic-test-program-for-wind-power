@@ -9,19 +9,98 @@ FoamFile
 
 propeller
 {
-	type      goldsteinActuationDiskSource;
-	active    on;
-
-	goldsteinActuationDiskSourceCoeffs
-	{
-		selectionMode cellSet;
-		cellSet actuatorDisk;
-		fieldNames (U);
-		Thrust 1.4322716146027505;
-		Torque 0.31722804562042484;
-		p1 (13.624950 -1.432040 -0.925000);
-		p2 (13.755481 -1.445759 -0.925000);
-		Rp 0.525;
-		Rh 0.10500000000000001;
-	}
+	type            vectorCodedSource;
+	selectionMode   cellSet;
+	cellSet actuatorDisk;
+	
+	fields          (U);
+	name            verticalDamping;
+	
+	codeInclude
+	#{
+	#};
+	
+	codeAddSup
+	#{
+		// -------------------- force model coefficients -----------------------
+		const scalar Thrust = 1.432272;
+		const scalar Torque = 0.317228;
+		const scalar Rh = 0.105000;
+		const scalar Rp = 0.525000;
+	
+		const vector p2(13.755481, -1.445759, -0.925000);
+		const vector p1(13.624950, -1.432040, -0.925000);
+	
+		// ------------------- Calculated values ----------------------------------
+	
+		const vector diskDir = p2 - p1;
+		const scalar L = mag(diskDir);
+		const vector v = diskDir/L;
+	
+		const scalar Delta = L;
+	
+		const scalar factor = Delta * 3.14159265359 * (3 * Rh + 4 * Rp) * (Rp - Rh);
+		const scalar Ax     = (105.0/8.0) * Thrust / factor;
+		const scalar Atheta = (105.0/8.0) * Torque / (Rp * factor);
+	
+		scalar d      = 0.0;
+		scalar r      = 0.0;
+		scalar r_star = 0.0;
+		scalar fbx    = 0.0;
+		scalar fbt    = 0.0;
+	
+		const scalar r_mark_hub = Rh/Rp;
+	
+		vector s(vector::zero);
+		vector rVector(vector::zero);
+		vector v_t(vector::zero);
+	
+		// -------------------- Load in necessary fields -----------------------
+		const scalarField& V          = mesh_.V();
+		const vectorField& cellCenter = mesh_.C();
+		// const volScalarField& rho_   = mesh_.lookupObject<volScalarField>("rho");
+	
+		vectorField& uSource = eqn.source();
+	
+		const labelList& cellIDs = cells();
+	
+		// -------------------- Apply source -----------------------
+		forAll(cellIDs, i)
+		{
+			label cellID = cellIDs[i];
+	
+			s = cellCenter[cellID] - p1;
+			d = s & v;
+	
+			if ((d > 0) && (d < L)) {
+					rVector = s - d*v;
+	
+					r = Foam::mag(rVector);
+	
+					if ((r > Rh) && (r < Rp)) {
+							r_star = (r - Rh) / (Rp - Rh);
+	
+							// Add axial body force
+							fbx = Ax * r_star * Foam::sqrt(1-r_star);
+							uSource[cellID] += -fbx * V[cellID] * v;
+	
+							// Add tangential body force
+							fbt = Atheta*(r_star * Foam::sqrt(1 - r_star) / (r_star * (1 - r_mark_hub) + r_mark_hub));
+							v_t = v ^ rVector;
+							v_t = v_t / Foam::mag(v_t);
+	
+							uSource[cellID] += -fbt * V[cellID] * v_t;
+					}
+			}
+	
+		}
+	#};
+	
+	codeCorrect
+	#{
+	#};
+	
+	codeConstrain
+	#{
+	#};
 }
