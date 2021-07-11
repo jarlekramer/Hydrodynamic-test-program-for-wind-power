@@ -3,7 +3,7 @@
 ## Introduction
 This repository contains OpenFOAM case folders that was used for an article with the same title as this *readme* document. The purpose is to show the specific settings used for the simulations in the article.
 
-The article can be found at the following link: **COMMING**
+The article can be found at the following link: **COMMING. Waiting on a review process**
 
 The simulations test a ship geometry with varying drift angle, rudder angle and propeller loading. Simulations are performed with the steady state solver *simpleFOAM* and the Volume of Fluid solver *interFOAM*.
 
@@ -18,7 +18,7 @@ We performed many simulations for this article. However, most of them used the s
 
 The article also show results from several validation experiments. The purpose was to test the accuarcy of both the calm water resistance and drift-induced forces with our simulation setup. The calm water resistance was tested by comparing CFD simulation with experimental results for the ship geoemtries KCS, KVLCC2 and DTMB 5415. The drift-induced forces was compared against experimental results for the ship geometries KVLCC2 and two special foil-like ship geometries. The OpenFOAM case folders for these validation experiments are also published in this repository.
 
-More details can be found in the article. 
+A presentation of the results, as well as more explanation regarding our test-setup can be found in the article.
 
 ## Ship geometry
 We also provide the geometry for the ship as CAD files, mesh files and Blender files.
