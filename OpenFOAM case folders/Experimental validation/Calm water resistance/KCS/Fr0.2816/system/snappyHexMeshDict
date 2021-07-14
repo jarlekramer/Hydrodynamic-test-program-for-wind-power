@@ -54,27 +54,6 @@ geometry
 		}
 	}
 
-	viscBox3
-	{
-		type searchableBox;
-		min (3.093405 -0.677055 -0.509331);
-		max (4.913055 0.677055 0.181965);
-	}
-
-	viscBox2
-	{
-		type searchableBox;
-		min (3.093405 -0.926343 -0.758619);
-		max (5.822880 0.926343 0.181965);
-	}
-
-	viscBox1
-	{
-		type searchableBox;
-		min (3.093405 -1.341822 -1.174098);
-		max (7.187617 1.341822 0.181965);
-	}
-
 	freeSurfaceBox1
 	{
 		type searchableBox;
@@ -179,30 +158,6 @@ castellatedMeshControls
 		{
 			mode inside;
 			levels ((1.0 2));
-		}
-
-		viscBox3
-		{
-			mode inside;
-			levels ((0.677055 3));
-		}
-
-		viscBox2
-		{
-			mode inside;
-			levels ((0.926343 2));
-		}
-
-		viscBox1
-		{
-			mode inside;
-			levels ((1.341822 1));
-		}
-
-		ship
-		{
-			mode distance;
-			levels ((0.363930 3));
 		}
 
 		freeSurfaceBox1

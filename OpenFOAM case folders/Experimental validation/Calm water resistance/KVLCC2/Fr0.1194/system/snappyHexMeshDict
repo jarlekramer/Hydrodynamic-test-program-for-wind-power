@@ -54,27 +54,6 @@ geometry
 		}
 	}
 
-	viscBox3
-	{
-		type searchableBox;
-		min (2.344810 -0.627002 -0.485624);
-		max (3.724110 0.627002 0.137930);
-	}
-
-	viscBox2
-	{
-		type searchableBox;
-		min (2.344810 -0.814451 -0.673072);
-		max (4.413760 0.814451 0.137930);
-	}
-
-	viscBox1
-	{
-		type searchableBox;
-		min (2.344810 -1.126865 -0.985487);
-		max (5.448235 1.126865 0.137930);
-	}
-
 	freeSurfaceBox1
 	{
 		type searchableBox;
@@ -156,7 +135,7 @@ castellatedMeshControls
 				}
 				ship_ship_rudder
 				{
-					level (7 7);
+					level (6 6);
 					patchIno
 					{
 						type wall;
@@ -179,30 +158,6 @@ castellatedMeshControls
 		{
 			mode inside;
 			levels ((1.0 2));
-		}
-
-		viscBox3
-		{
-			mode inside;
-			levels ((0.627002 3));
-		}
-
-		viscBox2
-		{
-			mode inside;
-			levels ((0.814451 2));
-		}
-
-		viscBox1
-		{
-			mode inside;
-			levels ((1.126865 1));
-		}
-
-		ship
-		{
-			mode distance;
-			levels ((0.275860 3));
 		}
 
 		freeSurfaceBox1
@@ -268,7 +223,7 @@ addLayersControls
 	{
 		hull
 		{
-			nSurfaceLayers 4;
+			nSurfaceLayers 5;
 		}
 		deck
 		{
@@ -281,7 +236,7 @@ addLayersControls
 	}
 
 	relativeSizes false;
-	finalLayerThickness 0.0043933243078655764;
+	finalLayerThickness 0.005052322954045413;
 	expansionRatio 1.15;
 	minThickness 0.0014443410233798233;
 	nGrow 0;

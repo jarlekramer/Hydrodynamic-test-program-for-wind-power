@@ -151,7 +151,7 @@ castellatedMeshControls
 	{
 		ship
 		{
-			level (4 4);
+			level (5 5);
 			regions
 			{
 				ship_ship_hull
@@ -164,7 +164,7 @@ castellatedMeshControls
 				}
 				ship_ship_deck
 				{
-					level (4 4);
+					level (5 5);
 					patchIno
 					{
 						type wall;

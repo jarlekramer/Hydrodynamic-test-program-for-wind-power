@@ -19,7 +19,7 @@ startFrom            latestTime;
 startTime            0;
 stopAt               endTime;
 endTime              23.44;
-deltaT               0.03349;
+deltaT               0.016743;
 writeControl         adjustableRunTime;
 writeInterval        0.2344;
 purgeWrite           2;
@@ -30,9 +30,9 @@ timeFormat           general;
 timePrecision        9;
 runTimeModifiable    yes;
 adjustTimeStep       yes;
-maxCo                40.0;
-maxDeltaT            0.03349;
-maxAlphaCo           10.0;
+maxCo                20.0;
+maxDeltaT            0.016743;
+maxAlphaCo           5.0;
 
 functions
 {

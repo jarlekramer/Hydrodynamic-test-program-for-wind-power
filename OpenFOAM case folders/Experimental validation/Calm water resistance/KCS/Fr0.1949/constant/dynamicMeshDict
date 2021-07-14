@@ -21,8 +21,8 @@ solver              sixDoFRigidBodyMotion;
 sixDoFRigidBodyMotionCoeffs
 {
 	patches                   (hull deck rudder);
-	innerDistance             0.36393;
-	outerDistance             3.6393;
+	innerDistance             0.60655;
+	outerDistance             1.81965;
 	centreOfMass              (0.050285632 0.000000000 -0.111394226);
 	mass                      823.7450928909294;
 	momentOfInertia           (79.297902024 3644.717138029 3707.977818268);

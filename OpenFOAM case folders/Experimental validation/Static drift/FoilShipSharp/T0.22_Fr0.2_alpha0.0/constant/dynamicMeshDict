@@ -21,7 +21,7 @@ solver              sixDoFRigidBodyMotion;
 sixDoFRigidBodyMotionCoeffs
 {
 	patches                   (hull deck trailingEdge);
-	innerDistance             0.22000000000000003;
+	innerDistance             0.7333333333333334;
 	outerDistance             2.2;
 	centreOfMass              (-0.279000000 0.000000000 0.000000000);
 	mass                      229.043675;

@@ -27,7 +27,7 @@ gradSchemes
 
 divSchemes
 {
-	div(rhoPhi,U)                          Gauss linearUpwind grad(U);
+	div(rhoPhi,U)                          Gauss LUST grad(U);
 	div(phi,k)                             Gauss linearUpwind limitedGrad;
 	div(phi,omega)                         Gauss linearUpwind limitedGrad;
 	div(phi,alpha)                         Gauss vanLeer;
