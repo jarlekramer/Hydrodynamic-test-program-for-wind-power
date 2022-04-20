@@ -3,7 +3,7 @@
 ## Introduction
 This repository contains OpenFOAM case folders that was used for an article with the same title as this *readme* document. The purpose is to show the specific settings used for the simulations in the article.
 
-The article can be found at the following link: **COMMING. Waiting on a review process**
+The article can be found at the following link: https://www.sciencedirect.com/science/article/pii/S0029801821016024?via%3Dihub
 
 The simulations test a ship geometry with varying drift angle, rudder angle and propeller loading. Simulations are performed with the steady state solver *simpleFOAM* and the Volume of Fluid solver *interFOAM*.
 
@@ -22,7 +22,5 @@ A presentation of the results, as well as more explanation regarding our test-se
 
 ## Ship geometry
 We also provide the geometry for the ship as CAD files, mesh files and Blender files.
-
-The CAD geometry was created with Onshape, and the complete model can also be found at the following link: **COMMING**.
 
 Blender was used to apply patch information to the geometry and handle the geometry variations during the simulation setup.
