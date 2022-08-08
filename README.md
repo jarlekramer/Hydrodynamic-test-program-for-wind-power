@@ -16,7 +16,9 @@ We performed many simulations for this article. However, most of them used the s
 
 - Unsteady simulation with free surface, without rudder and propeller. Drift angle = 6 degrees, model scale = 1:4
 
-The article also show results from several validation experiments. The purpose was to test the accuarcy of both the calm water resistance and drift-induced forces with our simulation setup. The calm water resistance was tested by comparing CFD simulation with experimental results for the ship geoemtries KCS, KVLCC2 and DTMB 5415. The drift-induced forces was compared against experimental results for the ship geometries KVLCC2 and two special foil-like ship geometries. The OpenFOAM case folders for these validation experiments are also published in this repository.
+The article also show results from several validation experiments. The purpose was to test the accuarcy of both the calm water resistance and drift-induced forces with our simulation setup. The calm water resistance was tested by comparing CFD simulation with experimental results for the ship geoemtries KCS, KVLCC2 and DTMB 5415. The drift-induced forces was compared against experimental results for the ship geometries KVLCC2 and two special foil-like ship geometries. 
+
+The OpenFOAM case folders for these validation experiments are published at a seperate repository found at the following link: https://github.com/jarlekramer/numerical_towing_tank_validation
 
 A presentation of the results, as well as more explanation regarding our test-setup can be found in the article.
 
